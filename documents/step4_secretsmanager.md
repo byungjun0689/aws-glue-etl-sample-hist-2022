@@ -17,7 +17,7 @@
     - `db_pw`
         - ******* : DB에서 설정한 PW
 
-![Untitled](../img/Untitled 018.png)
+![Untitled](../img/Untitled%2018.png)
 
 ### 4.2 SecretsManager VPC Endpoint
 
@@ -38,4 +38,4 @@
     - 보안그룹
         - `{메일id}-handson-sg` (이전에 생성했던 sg)
     
-    ![Untitled](../img/Untitled 019.png)
+    ![Untitled](../img/Untitled%2019.png)

@@ -18,9 +18,9 @@
     - 이름
         - `{메일id}-handson-glue-role`
 
-![Untitled](../img/Untitled 020.png)
+![Untitled](../img/Untitled%2020.png)
 
-![Untitled](../img/Untitled 021.png)
+![Untitled](../img/Untitled%2021.png)
 
 ### 5.1 연결 추가~~(필요없음)~~
 
@@ -30,9 +30,9 @@
     - 이름
         - `{메일id}-handson-postgresql-connection`
     
-    ![Untitled](../img/Untitled 022.png)
+    ![Untitled](../img/Untitled%2022.png)
     
-    ![Untitled](../img/Untitled 023.png)
+    ![Untitled](../img/Untitled%2023.png)
     
 
 ### 5.2 Step 1. Job 1 (Dimension)
@@ -42,11 +42,11 @@
     - `{메일id}_jb_retail_dimension_products_d2s`
     - `규칙` : {메일id}_jb_프로젝트_타입_테이블명_(db : d, 2:to, s : s3)
 
-![Untitled](../img/Untitled 024.png)
+![Untitled](../img/Untitled%2024.png)
 
-![Untitled](../img/Untitled 025.png)
+![Untitled](../img/Untitled%2025.png)
 
-![Untitled](../img/Untitled 026.png)
+![Untitled](../img/Untitled%2026.png)
 
 - Job Python Script
     - outputPath : S3 Path 변경 필요.
@@ -118,9 +118,9 @@
     
 - 결과
     
-    ![Untitled](../img/Untitled 027.png)
+    ![Untitled](../img/Untitled%2027.png)
     
-    ![Untitled](../img/Untitled 028.png)
+    ![Untitled](../img/Untitled%2028.png)
     
 
 ### 5.3 Step 1. Job 2 ( Fact Data, 구매, 발주 데이터)
@@ -149,11 +149,11 @@
 - 생성 방법은 위와 동일, 단 파라미터에만 아래와 같이 적용.
     - 보안 구성, 스크립트 라이브러리 및 작업 파라미터(선택항목) 메뉴에서
         
-        ![Untitled](../img/Untitled 029.png)
+        ![Untitled](../img/Untitled%2029.png)
         
 - 연결
     
-    ![Untitled](../img/Untitled 026.png)
+    ![Untitled](../img/Untitled%2026.png)
     
 - 스크립트
     - outputPath : S3 Path 변경 필요.
@@ -235,9 +235,9 @@
     ```
     
 
-![Untitled](../img/Untitled 030.png)
+![Untitled](../img/Untitled%2030.png)
 
-![Untitled](../img/Untitled 031.png)
+![Untitled](../img/Untitled%2031.png)
 
 ### 5.4 Step 1. Crawler (Step 1, Dimension/Factdata) 생성
 
@@ -252,20 +252,20 @@
         - s3://hist-retail/dimension/products
         - 해당 폴더까지 지정.
     
-    ![Untitled](../img/Untitled 032.png)
+    ![Untitled](../img/Untitled%2032.png)
     
-    ![Untitled](../img/Untitled 033.png)
+    ![Untitled](../img/Untitled%2033.png)
     
-    ![Untitled](../img/Untitled 034.png)
+    ![Untitled](../img/Untitled%2034.png)
     
     - 제외 `**패턴 추가**` (_temporary 폴더가 생기면서 Table이 꼬인다)
         - ****/_temporary/****
     
-    ![Untitled](../img/Untitled 035.png)
+    ![Untitled](../img/Untitled%2035.png)
     
     - 크롤러 실행
     
-    ![Untitled](../img/Untitled 036.png)
+    ![Untitled](../img/Untitled%2036.png)
     
 
 - `**5.4.2 Fact Data Crawler 생성 (발주,거래)**`
@@ -276,23 +276,23 @@
         - 제외 → `**패턴 추가**` (_temporary 폴더가 생기면서 Table이 꼬인다)
         - ****/_temporary/****
     
-    ![Untitled](../img/Untitled 037.png)
+    ![Untitled](../img/Untitled%2037.png)
     
     - 포함 경로
         - s3://blee-hist-retail/factdata/sales
         - s3://blee-hist-retail/factdata/balju
         - 사실 아래 처럼 진행해도 무관하나 Stepfunction 구성 부분에서 2개로 나눠서 개발하는 것으로 구성되어 2개로 나누는 것을 추천드립니다.
     
-    ![Untitled](../img/Untitled 038.png)
+    ![Untitled](../img/Untitled%2038.png)
     
 - 결과
     
-    ![Untitled](../img/Untitled 039.png)
+    ![Untitled](../img/Untitled%2039.png)
     
 - Athena 데이터 조회
     - 필요시 Athena 를 통해 ad-hoc 분석을 수행하여 Data Market 구성을 어떻게 할지 결정.
     
-    ![Untitled](../img/Untitled 040.png)
+    ![Untitled](../img/Untitled%2040.png)
     
 
 ### 5.5 Step 2. Silver Data 생성.
@@ -327,9 +327,9 @@
         - PostgreSQL 접근이 없기 때문에 위에 생성했던 Job과 다르게 연결을 선택할 필요 없음.
 - 화면 캡처
     
-    ![Untitled](../img/Untitled 041.png)
+    ![Untitled](../img/Untitled%2041.png)
     
-    ![Untitled](../img/Untitled 042.png)
+    ![Untitled](../img/Untitled%2042.png)
     
 - **Script**
     - `bucket_name 변경 필요.` ⇒ 본인 S3 Bucket 으로 변경.
@@ -391,7 +391,7 @@ if daily_summary_of_balju_df2.count() > 0:
     daily_summary_of_balju_df2.write.mode('append').partitionBy("balju_date").parquet(outputPath)
 ```
 
-![Untitled](../img/Untitled 043.png)
+![Untitled](../img/Untitled%2043.png)
 
 ### 5.7 Step 2. Job 생성 ( 매출 데이터 )
 
@@ -406,9 +406,9 @@ if daily_summary_of_balju_df2.count() > 0:
         - PostgreSQL 접근이 없기 때문에 위에 생성했던 Job과 다르게 연결을 선택할 필요 없음
 - 화면 캡처
     
-    ![Untitled](../img/Untitled 044.png)
+    ![Untitled](../img/Untitled%2044.png)
     
-    ![Untitled](../img/Untitled 045.png)
+    ![Untitled](../img/Untitled%2045.png)
     
 - Script
 
@@ -474,7 +474,7 @@ datetime_product_sales_df2 = datetime_product_sales_df.join(product_df, datetime
 datetime_product_sales_df2.write.mode('append').partitionBy("tr_date").parquet(outputPath+"/dailytimeProduct")
 ```
 
-![Untitled](../img/Untitled 046.png)
+![Untitled](../img/Untitled%2046.png)
 
 ### 5.8 Step 2. Crawler 생성
 
@@ -501,13 +501,13 @@ datetime_product_sales_df2.write.mode('append').partitionBy("tr_date").parquet(o
         - 이전에 생성했던 Role
     - 화면 캡처
         
-        ![Untitled](../img/Untitled 047.png)
+        ![Untitled](../img/Untitled%2047.png)
         
-        ![Untitled](../img/Untitled 048.png)
+        ![Untitled](../img/Untitled%2048.png)
         
-        ![Untitled](../img/Untitled 049.png)
+        ![Untitled](../img/Untitled%2049.png)
         
-        ![Untitled](../img/Untitled 050.png)
+        ![Untitled](../img/Untitled%2050.png)
         
 - 판매 Crawler 생성
     - (Legacy Page) 각각 위에 작성된 경로 3개 발주와 동일한 방법으로 생성
@@ -516,7 +516,7 @@ datetime_product_sales_df2.write.mode('append').partitionBy("tr_date").parquet(o
             - `신규 Crawler 메뉴 선택`
             - Create Crawler
             
-            ![Untitled](../img/Untitled 051.png)
+            ![Untitled](../img/Untitled%2051.png)
             
             - Add a data source → Create Crawler
                 - 일별시간별 매출
@@ -527,14 +527,14 @@ datetime_product_sales_df2.write.mode('append').partitionBy("tr_date").parquet(o
                     - 포함 경로 : s3://blee-hist-retail/silver/sales/dailytimeProduct/
                 - 아래와 같이 3개 항목에 대해서 Add a Datasource
                 
-                ![Untitled](../img/Untitled 052.png)
+                ![Untitled](../img/Untitled%2052.png)
                 
-                ![Untitled](../img/Untitled 053.png)
+                ![Untitled](../img/Untitled%2053.png)
                 
-                ![Untitled](../img/Untitled 054.png)
+                ![Untitled](../img/Untitled%2054.png)
                 
             - 제외 → `**패턴 추가**` (_temporary 폴더가 생기면서 Table이 꼬인다)
             - ****/_temporary/****
 - 결과
 
-![Untitled](../img/Untitled 055.png)
+![Untitled](../img/Untitled%2055.png)

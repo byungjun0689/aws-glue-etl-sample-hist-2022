@@ -10,7 +10,7 @@
     - 이름 : `{메일id}-handson`
     - Subnet, S3 Endpoint 생성
     
-    ![Untitled](../img/Untitled 02.png)
+    ![Untitled](../img/Untitled%202.png)
     
 - VPC 서비스 → 앤드포인트(Endpoint) → 내 VPC S3 엔드포인트 선택 → 라우팅 테이블 관리 (필요없음)
     - `Public Subnet` → 라우트 테이블에서 체크 해줘야 함.
@@ -18,7 +18,7 @@
         - RDS(DB)를 Public Subnet 에 위치하여 작업을 수행할 예정이라 public subnet에 endpoint 연결이 필요.
         - **AWS Glue 에서 RDS 데이터를 S3로 ETL작업 수행 시 접근 권한이 필요. → 에러 발생.**
     
-    ![Untitled](../img/Untitled 03.png)
+    ![Untitled](../img/Untitled%203.png)
     
 - **`참고 : VPC S3 Endpoint 생성이 안됐을 경우.`**
     - 원래는 VPC 생성하게 될 때 자동으로 생성됨
@@ -27,21 +27,21 @@
     - 서비스에서 S3검색후 Gateway로 되어있는 부분을 선택.
         - 해당 VPC 선택 후 나머지는 Default로 세팅
     
-    ![Untitled](../img/Untitled 04.png)
+    ![Untitled](../img/Untitled%204.png)
     
 
 ### 2.2 `Security Group` 생성
 
 - VPC 서비스 → 보안 그룹(Security Group) → 보안 그룹 생성
 
-![Untitled](../img/Untitled 05.png)
+![Untitled](../img/Untitled%205.png)
 
 - 신규 Security Group 생성 후 위 `생성한 VPC`와 연결.
     - 이름
         - `{메일id}-handson-sg`
     - 이름과 VPC만 선택 후 `생성`
     
-    ![Untitled](../img/Untitled 06.png)
+    ![Untitled](../img/Untitled%206.png)
     
 
 ### 2.3 Security Group `Inbound 규칙 추가`
@@ -65,7 +65,7 @@
             - 접두사 목록 이름 : com.amazonaws.ap-northeast-2.s3 찾아서 ID를 복사
                 - **pl-78a54011**
             
-            ![Untitled](../img/Untitled 07.png)
+            ![Untitled](../img/Untitled%207.png)
             
     - `자체 통신`
         - 유형 - 모든 TCP
@@ -73,4 +73,4 @@
         - 설명 - Self inbound
         - 참조 - 모든 TCP → 해당 Security group으로 접근 되도록 추가. ( Glue job 실행시 필요, AWS안내 참조)
     
-    ![Untitled](../img/Untitled 08.png)
+    ![Untitled](../img/Untitled%208.png)

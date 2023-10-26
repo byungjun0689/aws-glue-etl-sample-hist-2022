@@ -18,10 +18,10 @@
     - 확인방법
         - VPC 서비스 → 서브넷 → 검색 → {메일id}-handson-subnet-public → IP확인
         
-        ![Untitled](../img/Untitled 09.png)
+        ![Untitled](../img/Untitled%209.png)
         
 
-![Untitled](../img/Untitled 010.png)
+![Untitled](../img/Untitled%2010.png)
 
 ### 3.2 RDS 생성
 
@@ -36,11 +36,11 @@
 - 모니터링 기능 전부 `제거`
     - 운영상에는 필요하겠지만 현재 개발 상태에서는 필요 없음.
 
-![Untitled](../img/Untitled 011.png)
+![Untitled](../img/Untitled%2011.png)
 
-![Untitled](../img/Untitled 012.png)
+![Untitled](../img/Untitled%2012.png)
 
-![Untitled](../img/Untitled 013.png)
+![Untitled](../img/Untitled%2013.png)
 
 ### 3.3 DBMS 접근
 
@@ -52,7 +52,7 @@
 - 참고
     - `Host 입력 후 JDBC 연결 URL Notepad로 복사 → 추후 사용될 예정.`
 
-![Untitled](../img/Untitled 014.png)
+![Untitled](../img/Untitled%2014.png)
 
 ### 3.4 스크립트(Create Table)
 
@@ -110,11 +110,11 @@ ALTER TABLE "RETAIL"."balju_refund" ADD FOREIGN KEY ("product_cd") REFERENCES "R
         - transaction_order과 balju_refund 은 `동시 진행`
     - 해당 테이블 선택 후 우클릭 → 데이터 가져오기
     
-    ![Untitled](../img/Untitled 015.png)
+    ![Untitled](../img/Untitled%2015.png)
     
-    ![Untitled](../img/Untitled 016.png)
+    ![Untitled](../img/Untitled%2016.png)
     
-    ![Untitled](../img/Untitled 017.png)
+    ![Untitled](../img/Untitled%2017.png)
     
     - 다음 → 다음 → 진행
 - DBeaver 또는 사용하고 있는 DBMS Application을 활용.

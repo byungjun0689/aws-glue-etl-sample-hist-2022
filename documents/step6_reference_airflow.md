@@ -23,7 +23,7 @@ source ~/.zshrc
 brew services restart postgresql@13
 ```
 
-![Untitled](../img/Untitled 083.png)
+![Untitled](../img/Untitled%2083.png)
 
 ### 연결 및 DataBase 생성
 
@@ -221,6 +221,6 @@ with DAG(
 
 ### 결과
 
-![Untitled](../img/Untitled 084.png)
+![Untitled](../img/Untitled%2084.png)
 
-![Untitled](../img/Untitled 085.png)
+![Untitled](../img/Untitled%2085.png)

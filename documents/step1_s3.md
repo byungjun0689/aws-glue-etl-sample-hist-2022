@@ -1,4 +1,6 @@
 ## 1. S3 버킷 및 폴더 생성
+
+
 💡 `[설명]`
 [AWS S3 란?](https://www.notion.so/AWS-S3-8c5afd0c5df64f589009b10de7df1c52?pvs=21)
 
@@ -20,4 +22,4 @@
             2. `script` : glue job script 저장
             3. `logs` : glue job pyspark log, Spark History를 볼 수 있도록 처리하는 폴더.
 
-![Untitled](../img/Untitled 01.png)
+![Untitled](../img/Untitled%201.png)
